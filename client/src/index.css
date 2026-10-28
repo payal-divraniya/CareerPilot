@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #423744;
+  background: #FFF7F1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --cp-bg: #FFF7F1;
+  --cp-surface: #FFFCFA;
+  --cp-lavender: #A47BB4;
+  --cp-lavender-soft: #F1E8F8;
+  --cp-coral: #D77A73;
+  --cp-coral-soft: #F7D9D5;
+  --cp-plum: #72547D;
+  --cp-ink: #423744;
+  --cp-muted: #7D7180;
+  --cp-border: #E8DDE7;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--cp-bg); }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+::selection { background: var(--cp-coral-soft); color: var(--cp-ink); }
+:focus-visible { outline: 3px solid rgb(164 123 180 / 55%); outline-offset: 2px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.animate-fade-up { animation: fadeUp .45s ease-out both; }
+.animate-float { animation: float 7s ease-in-out infinite; }
+
+.form-input {
+  width: 100%; border: 1px solid var(--cp-border); border-radius: .8rem;
+  background: var(--cp-surface); padding: .75rem 1rem; color: var(--cp-ink); outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.form-input::placeholder { color: #A99BAE; }
+.form-input:focus { border-color: var(--cp-lavender); box-shadow: 0 0 0 4px rgb(164 123 180 / 17%); }
+.form-input-error { border-color: #C45D65; }
+.form-input-normal { border-color: var(--cp-border); }
+
+.card-lift { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.card-lift:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgb(79 53 81 / 8%); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

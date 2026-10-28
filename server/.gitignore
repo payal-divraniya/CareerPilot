@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+coverage/
+
+# Local legacy records: keep private; use the migration script before archiving them.
+src/data/users.json
+data/applications.json
